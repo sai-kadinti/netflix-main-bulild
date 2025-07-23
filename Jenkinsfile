@@ -10,7 +10,7 @@ pipeline
         SONARQUBE_TOKEN = "squ_ccb0d1ce68936479547512162c5d5f24ca606bea"
         DOCKERHUB_USER = 'kadintisai'
         DOCKERHUB_PASS = credentials('docker_pwd')
-        HOST_PORT = '9999'
+        HOST_PORT = '9998'
         SKIP_STAGE = 'true'
     }
 
