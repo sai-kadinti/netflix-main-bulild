@@ -4,6 +4,8 @@ pipeline
 
     environment 
     {
+        GIT_REPO = "https://github.com/sai-kadinti/netflix-main-bulild.git"
+        GIT_BRANCH = "gh-pages"
         DEV_SERVER_IP  = "100.27.28.9"
         JENKINS_SERVER_IP= "54.174.190.209"
         SONARQUBE_IPADDRESS = "http://100.27.28.9:9000/"
@@ -19,7 +21,7 @@ pipeline
         {
             steps 
             {
-                git branch: 'gh-pages', url: 'https://github.com/sai-kadinti/netflix-main-bulild.git'
+                git branch: '${GIT_BRANCH}', url: '${GIT_REPO}'
                 sh 'echo "Present working Directory: $(pwd)"'
                 sh 'echo "List of files: $(ls -lrth)"'
             }
