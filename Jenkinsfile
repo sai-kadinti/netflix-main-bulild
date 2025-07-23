@@ -4,15 +4,15 @@ pipeline
 
     environment 
     {
-        GIT_REPO = "https://github.com/sai-kadinti/netflix-main-bulild.git"
-        GIT_BRANCH = "gh-pages"
+        GIT_REPO_URL =  'https://github.com/sai-kadinti/netflix-main-bulild.git'
+        GIT_BRANCH = 'gh-pages'
         DEV_SERVER_IP  = "100.27.28.9"
         JENKINS_SERVER_IP= "54.174.190.209"
         SONARQUBE_IPADDRESS = "http://100.27.28.9:9000/"
         SONARQUBE_TOKEN = "squ_ccb0d1ce68936479547512162c5d5f24ca606bea"
         DOCKERHUB_USER = 'kadintisai'
         DOCKERHUB_PASS = credentials('docker_pwd')
-        HOST_PORT = '9998'
+        HOST_PORT = '9999'
         SKIP_STAGE = 'true'
     }
 
@@ -21,7 +21,7 @@ pipeline
         {
             steps 
             {
-                git branch: ${GIT_BRANCH} , url: ${GIT_REPO}
+                git branch: "${GIT_BRANCH}" , url: "${GIT_REPO_URL}"
                 sh 'echo "Present working Directory: $(pwd)"'
                 sh 'echo "List of files: $(ls -lrth)"'
             }
