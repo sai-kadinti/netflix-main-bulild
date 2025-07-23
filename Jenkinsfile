@@ -21,7 +21,7 @@ pipeline
         {
             steps 
             {
-                git branch: '${GIT_BRANCH}', url: '${GIT_REPO}'
+                git branch: ${GIT_BRANCH} , url: ${GIT_REPO}
                 sh 'echo "Present working Directory: $(pwd)"'
                 sh 'echo "List of files: $(ls -lrth)"'
             }
